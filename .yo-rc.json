@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.nexmind.mycv",
+      "nativeLanguage": "fr"
+    },
+    "jhipsterVersion": "4.14.1",
+    "baseName": "mycv",
+    "packageName": "com.nexmind.mycv",
+    "packageFolder": "com/nexmind/mycv",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mariadb",
+    "prodDatabaseType": "mariadb",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSocialSignIn": false,
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "27c1ba11585ad509d6ffdb02d725ca93ade9bef6",
+    "clientFramework": "angularX",
+    "useSass": true,
+    "clientPackageManager": "yarn",
+    "applicationType": "monolith",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "enableTranslation": true,
+    "nativeLanguage": "fr",
+    "languages": [
+      "fr"
+    ]
+  }
+}

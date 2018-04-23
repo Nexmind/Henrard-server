@@ -1,0 +1,14 @@
+version: '2'
+services:
+    mycv-app:
+        image: mycv
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:mariadb://mycv-mariadb:3306/mycv
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+    mycv-mariadb:
+        extends:
+            file: mariadb.yml
+            service: mycv-mariadb

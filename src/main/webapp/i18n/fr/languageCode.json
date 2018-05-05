@@ -1,0 +1,11 @@
+{
+    "mycvApp": {
+        "LanguageCode" : {
+            "null": "",
+            "FRENCH": "FRENCH",
+            "ENGLISH": "ENGLISH",
+            "SPANISH": "SPANISH",
+            "DUTCH": "DUTCH"
+        }
+    }
+}

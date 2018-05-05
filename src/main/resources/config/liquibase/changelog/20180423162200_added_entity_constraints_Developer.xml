@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Developer.
+    -->
+    <changeSet id="20180423162200-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="developers_id"
+                                 baseTableName="developer_languages"
+                                 constraintName="fk_developer_languages_developers_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="developer"/>
+        <addForeignKeyConstraint baseColumnNames="languages_id"
+                                 baseTableName="developer_languages"
+                                 constraintName="fk_developer_languages_languages_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="language"/>
+        
+    </changeSet>
+</databaseChangeLog>

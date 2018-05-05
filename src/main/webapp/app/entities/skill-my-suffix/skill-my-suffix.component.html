@@ -1,0 +1,70 @@
+<div>
+    <h2>
+        <span jhiTranslate="mycvApp.skill.home.title">Skills</span>
+        <button class="btn btn-primary float-right jh-create-entity create-skill-my-suffix" [routerLink]="['/', { outlets: { popup: ['skill-my-suffix-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="mycvApp.skill.home.createLabel">
+            Create new Skill
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="skills">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="mycvApp.skill.title">Title</span></th>
+            <th><span jhiTranslate="mycvApp.skill.description">Description</span></th>
+            <th><span jhiTranslate="mycvApp.skill.technology">Technology</span></th>
+            <th><span jhiTranslate="mycvApp.skill.level">Level</span></th>
+            <th><span jhiTranslate="mycvApp.skill.developer">Developer</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let skill of skills ;trackBy: trackId">
+                <td><a [routerLink]="['../skill-my-suffix', skill.id ]">{{skill.id}}</a></td>
+                <td>{{skill.title}}</td>
+                <td>{{skill.description}}</td>
+                <td jhiTranslate="{{'mycvApp.Technology.' + skill.technology}}">{{skill.technology}}</td>
+                <td jhiTranslate="{{'mycvApp.Level.' + skill.level}}">{{skill.level}}</td>
+                <td>
+                    <div *ngIf="skill.developer">
+                        <a [routerLink]="['../developer-my-suffix', skill.developer?.id ]" >{{skill.developer?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../skill-my-suffix', skill.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'skill-my-suffix/'+ skill.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'skill-my-suffix/'+ skill.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

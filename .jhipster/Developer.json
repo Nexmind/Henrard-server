@@ -1,0 +1,53 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "skills",
+            "otherEntityName": "skill",
+            "otherEntityRelationshipName": "developer"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "developers",
+            "relationshipName": "languages",
+            "otherEntityName": "language",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "philosophy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "age",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "picture",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "speciality",
+            "fieldType": "Technology",
+            "fieldValues": "IOS,ANDROID,NODEJS,JHIPSTER,ANGULAR,GIT,AWS"
+        }
+    ],
+    "changelogDate": "20180423162200",
+    "entityTableName": "developer",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

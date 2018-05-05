@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "developer",
+            "otherEntityName": "developer",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "technology",
+            "fieldType": "Technology",
+            "fieldValues": "IOS,ANDROID,NODEJS,JHIPSTER,ANGULAR,GIT,AWS"
+        },
+        {
+            "fieldName": "level",
+            "fieldType": "Level",
+            "fieldValues": "BASIC,MEDIUM,SENIOR,MASTER_RACE"
+        }
+    ],
+    "changelogDate": "20180423162201",
+    "entityTableName": "skill",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

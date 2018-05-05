@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "developers",
+            "otherEntityName": "developer",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "languages"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "LanguageCode",
+            "fieldValues": "FRENCH,ENGLISH,SPANISH,DUTCH"
+        },
+        {
+            "fieldName": "comment",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "level",
+            "fieldType": "Level",
+            "fieldValues": "BASIC,MEDIUM,SENIOR,MASTER_RACE"
+        }
+    ],
+    "changelogDate": "20180423162202",
+    "entityTableName": "language",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

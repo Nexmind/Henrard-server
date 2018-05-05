@@ -1,0 +1,52 @@
+
+<div *ngIf="developer">
+    <h2><span jhiTranslate="mycvApp.developer.detail.title">Developer</span> {{developer.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="mycvApp.developer.name">Name</span></dt>
+        <dd>
+            <span>{{developer.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="mycvApp.developer.description">Description</span></dt>
+        <dd>
+            <span>{{developer.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="mycvApp.developer.philosophy">Philosophy</span></dt>
+        <dd>
+            <span>{{developer.philosophy}}</span>
+        </dd>
+        <dt><span jhiTranslate="mycvApp.developer.age">Age</span></dt>
+        <dd>
+            <span>{{developer.age}}</span>
+        </dd>
+        <dt><span jhiTranslate="mycvApp.developer.picture">Picture</span></dt>
+        <dd>
+            <span>{{developer.picture}}</span>
+        </dd>
+        <dt><span jhiTranslate="mycvApp.developer.speciality">Speciality</span></dt>
+        <dd>
+            <span jhiTranslate="{{'mycvApp.Technology.' + developer.speciality}}">{{developer.speciality}}</span>
+        </dd>
+        <dt><span jhiTranslate="mycvApp.developer.languages">Languages</span></dt>
+        <dd>
+            <span *ngFor="let languages of developer.languages; let last = last">
+                <a [routerLink]="['/language-my-suffix', languages?.id ]">{{languages.id}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'developer-my-suffix/'+ developer.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,68 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myDeveloperLabel" jhiTranslate="mycvApp.developer.home.createOrEditLabel">Create or edit a Developer</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!developer.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="developer.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="mycvApp.developer.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                [(ngModel)]="developer.name" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="mycvApp.developer.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                [(ngModel)]="developer.description" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="mycvApp.developer.philosophy" for="field_philosophy">Philosophy</label>
+            <input type="text" class="form-control" name="philosophy" id="field_philosophy"
+                [(ngModel)]="developer.philosophy" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="mycvApp.developer.age" for="field_age">Age</label>
+            <input type="number" class="form-control" name="age" id="field_age"
+                [(ngModel)]="developer.age" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="mycvApp.developer.picture" for="field_picture">Picture</label>
+            <input type="text" class="form-control" name="picture" id="field_picture"
+                [(ngModel)]="developer.picture" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="mycvApp.developer.speciality" for="field_speciality">Speciality</label>
+            <select class="form-control" name="speciality" [(ngModel)]="developer.speciality" id="field_speciality" >
+                <option value="IOS">{{'mycvApp.Technology.IOS' | translate}}</option>
+                <option value="ANDROID">{{'mycvApp.Technology.ANDROID' | translate}}</option>
+                <option value="NODEJS">{{'mycvApp.Technology.NODEJS' | translate}}</option>
+                <option value="JHIPSTER">{{'mycvApp.Technology.JHIPSTER' | translate}}</option>
+                <option value="ANGULAR">{{'mycvApp.Technology.ANGULAR' | translate}}</option>
+                <option value="GIT">{{'mycvApp.Technology.GIT' | translate}}</option>
+                <option value="AWS">{{'mycvApp.Technology.AWS' | translate}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="mycvApp.developer.languages" for="field_languages">Languages</label>
+            <select class="form-control" id="field_languages" multiple name="languages" [(ngModel)]="developer.languages">
+                <option [ngValue]="getSelected(developer.languages, languageOption)" *ngFor="let languageOption of languages; trackBy: trackLanguageById">{{languageOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

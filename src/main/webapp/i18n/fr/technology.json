@@ -1,0 +1,14 @@
+{
+    "mycvApp": {
+        "Technology" : {
+            "null": "",
+            "IOS": "IOS",
+            "ANDROID": "ANDROID",
+            "NODEJS": "NODEJS",
+            "JHIPSTER": "JHIPSTER",
+            "ANGULAR": "ANGULAR",
+            "GIT": "GIT",
+            "AWS": "AWS"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+
+{
+    "mycvApp": {
+        "developer" : {
+            "home": {
+                "title": "Developers",
+                "createLabel": "Créer un nouveau Developer",
+                "createOrEditLabel": "Créer ou éditer un Developer"
+            },
+            "created": "Un nouveau Developer a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Developer avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Developer avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Developer {{ id }} ?"
+            },
+            "detail": {
+                "title": "Developer"
+            },
+            "name": "Name",
+            "description": "Description",
+            "philosophy": "Philosophy",
+            "age": "Age",
+            "picture": "Picture",
+            "speciality": "Speciality",
+            "skills": "Skills",
+            "languages": "Languages"
+        }
+    }
+}

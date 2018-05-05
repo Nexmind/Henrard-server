@@ -1,0 +1,11 @@
+{
+    "mycvApp": {
+        "Level" : {
+            "null": "",
+            "BASIC": "BASIC",
+            "MEDIUM": "MEDIUM",
+            "SENIOR": "SENIOR",
+            "MASTER_RACE": "MASTER_RACE"
+        }
+    }
+}

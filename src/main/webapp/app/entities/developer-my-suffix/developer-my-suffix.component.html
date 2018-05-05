@@ -1,0 +1,74 @@
+<div>
+    <h2>
+        <span jhiTranslate="mycvApp.developer.home.title">Developers</span>
+        <button class="btn btn-primary float-right jh-create-entity create-developer-my-suffix" [routerLink]="['/', { outlets: { popup: ['developer-my-suffix-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="mycvApp.developer.home.createLabel">
+            Create new Developer
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="developers">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="mycvApp.developer.name">Name</span></th>
+            <th><span jhiTranslate="mycvApp.developer.description">Description</span></th>
+            <th><span jhiTranslate="mycvApp.developer.philosophy">Philosophy</span></th>
+            <th><span jhiTranslate="mycvApp.developer.age">Age</span></th>
+            <th><span jhiTranslate="mycvApp.developer.picture">Picture</span></th>
+            <th><span jhiTranslate="mycvApp.developer.speciality">Speciality</span></th>
+            <th><span jhiTranslate="mycvApp.developer.languages">Languages</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let developer of developers ;trackBy: trackId">
+                <td><a [routerLink]="['../developer-my-suffix', developer.id ]">{{developer.id}}</a></td>
+                <td>{{developer.name}}</td>
+                <td>{{developer.description}}</td>
+                <td>{{developer.philosophy}}</td>
+                <td>{{developer.age}}</td>
+                <td>{{developer.picture}}</td>
+                <td jhiTranslate="{{'mycvApp.Technology.' + developer.speciality}}">{{developer.speciality}}</td>
+                <td>
+                    <span *ngFor="let languages of developer.languages; let last = last">
+                            <a class="form-control-static" [routerLink]="['../language-my-suffix', languages?.id ]">{{languages.id}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../developer-my-suffix', developer.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'developer-my-suffix/'+ developer.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'developer-my-suffix/'+ developer.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
